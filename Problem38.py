@@ -1,12 +1,17 @@
-#38.Take 5 numbers as input. If the user enters 0, skip it using continue. At the end, print the sum of all non-zero numbers entered.
-sum = 0
+#38.Rotate an array by one position to the right.
+def rotate_right(arr):
+    n = len(arr)
+    if n == 0:
+        return arr
 
-for i in range(5):
-    num = int(input("Enter a number: "))
+    last = arr[n - 1]          # Step 1
+    for i in range(n - 1, 0, -1):   # Step 2
+        arr[i] = arr[i - 1]
+    arr[0] = last              # Step 3
     
-    if num == 0:
-        continue
-    
-    sum += num
+    return arr
 
-print("Sum of non-zero numbers:", sum)
+
+# Example
+arr = [1, 2, 3, 4, 5]
+print(rotate_right(arr))
