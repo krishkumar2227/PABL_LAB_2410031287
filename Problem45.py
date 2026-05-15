@@ -4,8 +4,7 @@ def power(x, n):
         return 1
     else:
         return x * power(x, n - 1)
-
-x = int(input("Enter base number: "))
+    x = int(input("Enter base number: "))
 n = int(input("Enter power: "))
 
 result = power(x, n)
